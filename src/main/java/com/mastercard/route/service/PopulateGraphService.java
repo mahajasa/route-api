@@ -49,8 +49,8 @@ public class PopulateGraphService {
 		String source = token.substring(0,token.indexOf(seperator));
 		String destination = token.substring(token.indexOf(seperator)+1);
 		
-		CityVertex sourceVertex = new CityVertex(source.trim());
-		CityVertex destinationVertex = new CityVertex(destination.trim());
+		CityVertex sourceVertex = new CityVertex(source.trim().toLowerCase());
+		CityVertex destinationVertex = new CityVertex(destination.trim().toLowerCase());
     	
 		if(cityGraph.getAdjucentVertices().containsKey(sourceVertex))
 			cityGraph.getAdjucentVertices().get(sourceVertex).add(destinationVertex);
