@@ -38,15 +38,15 @@ This api has capability of finding whether a route exist between two cities, bas
     		* </dependency>
     
 ### API Details:
-  * Name of the API - Route API
-  * Base path - "/api/routes"
-  * Operations:
- 	 * GET 
-          	  * Operation path- "/connected"
-           	 * Query parameters - sourceCity, destinationCity
-           	 * Response body - String (Yes or No)
-	 * GET   
-           	 * Operation path- "/info"
+  	* Name of the API - Route API
+  	* Base path - "/api/routes"
+  	* Operations:
+ 	 *GET 
+		  * Operation path- "/connected"
+           	  * Query parameters - sourceCity, destinationCity
+           	  * Response body - String (Yes or No)
+	 *GET   
+           	  * Operation path- "/info"
 ### Execution:
   * 1) Clone the source code from https://github.com/mahajasa/route-api.git 
   * 2) Build the application with the command - mvn clean install
