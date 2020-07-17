@@ -23,13 +23,7 @@ This api has capability of finding whether a route exist between two cities, bas
   Java 8 and maven are installed prior to run this program
 
 ### Maven dependencies:
-  * This is a spring boot web application, and it comes with a default spring web dependency. 
-  
-   * <dependency>
-	* <groupId>org.springframework.boot</groupId>
-	* <artifactId>spring-boot-starter-web</artifactId>
-    * </dependency>
-  
+  * This is a spring boot web application   
   * In addition to this, this application uses springdoc-openapi dependency which helps expose the rest api's swagger endpoints.
   
   		* <dependency>
@@ -37,17 +31,22 @@ This api has capability of finding whether a route exist between two cities, bas
 			* <artifactId>springdoc-openapi-ui</artifactId>
 			* <version>1.2.32</version>
 		* </dependency>
+		
+		* <dependency>
+			* <groupId>org.springframework.boot</groupId>
+			* <artifactId>spring-boot-starter-web</artifactId>
+    		* </dependency>
     
 ### API Details:
   * Name of the API - Route API
   * Base path - "/api/routes"
   * Operations:
-        * GET 
-            * Operation path- "/connected"
-            * Query parameters - sourceCity, destinationCity
-            * Response body - String (Yes or No)
+ 	 * GET 
+          	  * Operation path- "/connected"
+           	 * Query parameters - sourceCity, destinationCity
+           	 * Response body - String (Yes or No)
 	 * GET   
-            * Operation path- "/info"
+           	 * Operation path- "/info"
 ### Execution:
   * 1) Clone the source code from https://github.com/mahajasa/route-api.git 
   * 2) Build the application with the command - mvn clean install
