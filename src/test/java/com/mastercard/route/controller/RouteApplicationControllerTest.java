@@ -21,12 +21,12 @@ public class RouteApplicationControllerTest {
 	@Test
 	public void shouldReturnDefaultMessageFalse() throws Exception {
 		this.mockMvc.perform(get("/api/routes/connected").param("sourceCity", "Cary").param("destinationCity", "Raleigh")).andDo(print())
-				.andExpect(status().isOk()).andExpect(content().string(("false")));
+				.andExpect(status().isOk()).andExpect(content().string(("No")));
 	}
 	@Test
 	public void shouldReturnDefaultMessageTrue() throws Exception {
 		this.mockMvc.perform(get("/api/routes/connected").param("sourceCity", "Boston").param("destinationCity", "New York")).andDo(print())
-				.andExpect(status().isOk()).andExpect(content().string(("true")));
+				.andExpect(status().isOk()).andExpect(content().string(("Yes")));
 	}
 	
 }
