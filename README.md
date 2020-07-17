@@ -59,5 +59,8 @@ The api will respond with 'No'
 # Invoke the api
   When this application runs successfully on local host, it can be accessed at the following endpoint. Path parameters can be changed as desired
         http://localhost:8080/api/routes/connected?sourceCity=Trenton&destinationCity=Philadelphia 
+	
+# Test case 
+  Coverage report after maven build can be found at 'PATH_TO_APPLICATION_ROOT_DIRECTORY/taget/site/jococo/index.html'
         
         
