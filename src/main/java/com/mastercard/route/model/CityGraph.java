@@ -1,19 +1,19 @@
 package com.mastercard.route.model;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class CityGraph {
 
-	private Map<CityVertex, List<CityVertex>> adjucentVertices = new HashMap<CityVertex, List<CityVertex>>();
+	private Map<CityVertex, Set<CityVertex>> adjucentVertices = new HashMap<CityVertex, Set<CityVertex>>();
 
-	public Map<CityVertex, List<CityVertex>> getAdjucentVertices() {
+	public Map<CityVertex, Set<CityVertex>> getAdjucentVertices() {
 		return adjucentVertices;
 	}
  
 	
-	public List<CityVertex> getAdjucentCities(String city){
+	public Set<CityVertex> getAdjucentCities(String city){
 		return adjucentVertices.get(new CityVertex(city));	
 	}
 

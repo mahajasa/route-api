@@ -71,8 +71,14 @@
 						<goals>
 							<goal>report</goal>
 						</goals>
+						<configuration>
+							<excludes>
+								<exclude>com/mastercard/route/model/**</exclude>
+							</excludes>
+						</configuration>
 					</execution>
 				</executions>
+
 			</plugin>
 
 		</plugins>

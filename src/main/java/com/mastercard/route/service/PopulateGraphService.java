@@ -4,8 +4,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.StringTokenizer;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +56,7 @@ public class PopulateGraphService {
 		if(cityGraph.getAdjucentVertices().containsKey(sourceVertex))
 			cityGraph.getAdjucentVertices().get(sourceVertex).add(destinationVertex);
 		else {
-			List<CityVertex> list = new ArrayList<CityVertex>();
+			Set<CityVertex> list = new HashSet<CityVertex>();
 			list.add(destinationVertex);
 			cityGraph.getAdjucentVertices().put(sourceVertex, list);
 		}
@@ -63,7 +64,7 @@ public class PopulateGraphService {
 		if(cityGraph.getAdjucentVertices().containsKey(destinationVertex))
 			cityGraph.getAdjucentVertices().get(destinationVertex).add(sourceVertex);
 		else {
-			List<CityVertex> list = new ArrayList<CityVertex>();
+			Set<CityVertex> list = new HashSet<CityVertex>();
 			list.add(sourceVertex);
 			cityGraph.getAdjucentVertices().put(destinationVertex, list);
 		}

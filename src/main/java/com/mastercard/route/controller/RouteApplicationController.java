@@ -23,7 +23,7 @@ public class RouteApplicationController {
 	
 	Logger logger = LoggerFactory.getLogger(RouteApplicationController.class);
 	
-	@GetMapping("/ping")
+	@GetMapping("/info")
 	public ResponseEntity<String> ping(){
 		logger.info("Healthcheck invoked");
 		return ResponseEntity.ok("Service running");
@@ -33,7 +33,7 @@ public class RouteApplicationController {
 	public ResponseEntity<String> doesRouteExist(@RequestParam String sourceCity, @RequestParam String destinationCity) {
 		logger.info("doesRouteExist entered : source" + sourceCity + ", destination-"+destinationCity);
 		service.setVisitedSources(new HashSet<String>());
-		return ResponseEntity.ok(service.doesRouteExist(sourceCity, destinationCity) ? "Yes" : "No");
+		return ResponseEntity.ok(service.doesRouteExist(sourceCity.toLowerCase(), destinationCity.toLowerCase()) ? "Yes" : "No");
 	}
 
 }

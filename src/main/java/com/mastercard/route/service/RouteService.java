@@ -26,23 +26,23 @@ public class RouteService {
 	 * @return
 	 */
 	public boolean doesRouteExist(String source, String destination) {
-		visitedSources.add(source.toLowerCase());
+		visitedSources.add(source);
 		boolean resultValue = false;
 		
-		Set<String> visited = new HashSet<String>();
-		List<CityVertex> adjucentVertices = cityGraph.getAdjucentCities(source.toLowerCase());
+		Set<String> connections = new HashSet<String>();
+		Set<CityVertex> adjucentVertices = cityGraph.getAdjucentCities(source);
 		
 		if(adjucentVertices!=null && adjucentVertices.size()>0) {
 			for(CityVertex citiVertex : adjucentVertices) {
 				if(citiVertex.getName().equalsIgnoreCase(destination))
 					return true;
 				else
-					visited.add(citiVertex.getName());
+					connections.add(citiVertex.getName());
 			}
 			
-			for(String visitedCity : visited) {
-				if(!visitedSources.contains(visitedCity.toLowerCase())) {
-					resultValue = doesRouteExist(visitedCity, destination);
+			for(String connection : connections) {
+				if(!visitedSources.contains(connection)) {
+					resultValue = doesRouteExist(connection, destination);
 					if(resultValue)
 						return true;
 				}
