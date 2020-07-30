@@ -24,7 +24,7 @@ This api has capability of finding whether a route exist between two cities, bas
 
 ### Maven dependencies:
   * This is a spring boot web application   
-  * In addition to this, this application uses springdoc-openapi dependency which helps expose the rest api's swagger endpoints.
+  * Spring-boot-starter web dependency is used which gives the application rest capabilities. In addition to this, this application uses springdoc-openapi-ui dependency helps       expose the rest api's swagger endpoints.
   
   		* <dependency>
 			* <groupId>org.springdoc</groupId>
